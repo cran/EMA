@@ -1,5 +1,32 @@
 ********************
-Bugs corrected in EMAv1.2
+Changes in EMA1.3.1
+********************
+
+- clust.dist.R
+Changes in correlation function
+
+- plotSample.R
+Add ellipses in the graphical output
+
+- clustering.plot.R
+Bug in heatmap legend
+Stopifnot colnames data
+
+- km
+Graphical options changed
+
+
+- clustering.plot.R
+lab and lab.sup can be data.frame, casting to matrix is done manually
+new option legend.pos allows the user to choose the legend position
+
+- genes.selection
+the user can specify the quantile to be computed to filter the genes
+
+
+
+********************
+Changes in EMA1.2
 ********************
 
 - Add NAMESPACE file and update DESCRIPTION file
@@ -28,7 +55,7 @@ Bug missing function
 - vignette updated
 
 ********************
-Bugs corrected in EMAv1.1
+Changes in EMA1.1
 ********************
 
 - runPCA.R

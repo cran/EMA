@@ -9,7 +9,7 @@ runPCA(X, ncp=5, scale=TRUE, ind.sup=NULL, quanti.sup=NULL,quali.sup=NULL,
 sample.qual=TRUE, variable.qual=FALSE, sample.cont=TRUE,variable.cont=FALSE,
 plotSample=TRUE, plotVariable=FALSE, plotInertia = TRUE,plotBiplot=FALSE,
 plot3dSample=FALSE, lab.sample="quality", lab.var=NULL,palette="rainbow",
-lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=TRUE, ...) 
+lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=FALSE, ...) 
 }
 \arguments{
   \item{X}{a data frame with n rows (samples) and p columns (variables)}
@@ -34,7 +34,7 @@ lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=TRUE, ...)
   \item{lim.cos2.var}{a numeric, for graphics, keep variables with cos2 >= lim.cos2.var, by default = 0}
   \item{pdf}{a boolean, if TRUE save all the graphics in a pdf file, by default = FALSE}
   \item{pdfname}{pdf file name for saving graphics}
-  \item{verbose}{print results if verbose = TRUE, by default = TRUE}
+  \item{verbose}{print results if verbose = TRUE, by default = FALSE}
   \item{ ... }{Arguments to be passed to methods, such as graphical parameters (see 'par').}
 }
 

@@ -19,9 +19,9 @@ The package can be used for both one or two colours gene expression micrarrays a
 \tabular{ll}{
 Package: \tab EMA\cr
 Type: \tab Package\cr
-Version: \tab 1.3\cr
-Date: \tab 2009-10-15\cr
-License: \tab What license is it under?\cr
+Version: \tab 1.3.1\cr
+Date: \tab 2011-06-09\cr
+License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
 For details, see vignette.

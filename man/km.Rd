@@ -9,8 +9,7 @@ In case of >=2 survival curves, use logrank test to assess the difference betwee
 Missing values are removed
 }
 \usage{
-km(time, status, group = NULL, title = NULL, pdfname = NULL,
-pdfwidth = 7, pdfheight = 7)
+km(time, status, group = NULL, xlab="Time (years)", ylab="", ...)
 }
 \arguments{
   \item{time}{
@@ -23,19 +22,17 @@ The status indicator, normally 0=alive, 1=dead (numeric). Other choices are TRUE
 indicates the group to which is assigned each observation (factor).
 For one groupe only (no comparison), group is set to null (default)
 }
-  \item{title}{
-(optional): a character string, title of the Kaplan Meier's plot
+  \item{xlab}{
+(optional): a character string, xlabel of the Kaplan Meier's plot
 }
-  \item{pdfname}{
-pdf file name for saving Kaplan Meier plot. If set to null (default), no pdf file is generated
+  \item{ylab}{
+(optional): a character string, ylabel of the Kaplan Meier's plot
 }
-  \item{pdfwidth}{
-The width of the graphics region in inches. The default value is 7
-}
-  \item{pdfheight}{
-The height of the graphics region in inches. The default value is 7
+\item{...}{
+(optional): Additional graphical parameters
 }
 }
+
 \value{
 A list with
 \item{fit.km}{results provided by Kaplan Meier analysis. See the R help on survfit for details}

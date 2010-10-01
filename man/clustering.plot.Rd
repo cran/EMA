@@ -9,15 +9,15 @@
 clustering.plot(tree, tree.sup, data, lab, lab.sup,
 dendro=TRUE, dendro.sup=TRUE, title="", scale="row", heatcol,
 pdfname, names=TRUE, names.sup=TRUE, names.dist=TRUE,
-trim.heatmap=1, palette="rainbow", legend=TRUE, ...)
+trim.heatmap=1, palette="rainbow", legend=TRUE, legend.pos="topright", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{tree}{an object of class 'agnes' representing the first clustering.}
   \item{tree.sup}{optional - an object of class 'agnes' representing the second clustering.}
   \item{data}{optional - expression data for the heatmap plot}
-  \item{lab}{optional - a matrix of labels for 'tree' (by columns)}
-  \item{lab.sup}{optional - a matrix of labels for 'tree.sup' (by columns)}
+  \item{lab}{optional - a matrix or data.frame of labels for 'tree' (by columns)}
+  \item{lab.sup}{optional - a matrix or data.frame of labels for 'tree.sup' (by columns)}
   \item{dendro}{display dendrogram of tree object - The default is TRUE}
   \item{dendro.sup}{display dendogram of tree.sup  object - The default is TRUE}
   \item{title}{optional - title of the graphic}
@@ -32,6 +32,8 @@ trim.heatmap=1, palette="rainbow", legend=TRUE, ...)
   \item{trim.heatmap}{Percentile of the data to be trimmed. This helps to keep an informative color scale in the heatmap}
   \item{palette}{Palette used for color selection. see as.colors()}
   \item{legend}{Draw legend of the labels. Default is TRUE}
+  \item{legend.pos}{Position of the legend (topright, topleft,
+    bottomright, bottomleft). Default is topright}  
   \item{...}{Arguments to be passed to methods, such as graphical parameters (see 'par').}
 }
 \details{

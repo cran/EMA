@@ -1,5 +1,5 @@
 
-clustering.plot <- function(tree, tree.sup, data=NULL, lab, lab.sup, dendro=TRUE, dendro.sup=TRUE, title="", scale="row", heatcol, pdfname, names=TRUE, names.sup=TRUE, names.dist=TRUE, trim.heatmap=1, palette="rainbow", legend=TRUE, ...){
+clustering.plot <- function(tree, tree.sup, data=NULL, lab, lab.sup, dendro=TRUE, dendro.sup=TRUE, title="", scale="row", heatcol, pdfname, names=TRUE, names.sup=TRUE, names.dist=TRUE, trim.heatmap=1, palette="rainbow", legend=TRUE, legend.pos="topright", ...){
 
   if (missing(tree)){
     stop("At least, one tree is required.")
@@ -8,13 +8,24 @@ clustering.plot <- function(tree, tree.sup, data=NULL, lab, lab.sup, dendro=TRUE
   if ((!missing(tree.sup) && missing(data))){
     stop("Two-ways clustering need two trees and data matrix.")
   }
+  ##check that label exist
+  if(! "order.lab" %in% names(tree))
+      stop("order.lab missing in tree object. Check you data colnames.") 
 
   if (!missing(lab) && is.vector(lab)){
     lab <- matrix(lab, ncol=1)
   }
+  if (!missing(lab) && is.data.frame(lab)){
+      for (i in 1:ncol(lab)) lab[, i] <- as.character(lab[, i])
+      lab <- as.matrix(lab)
+  }
   
   if (!missing(lab.sup) && is.vector(lab.sup)){
     lab.sup <- matrix(lab.sup, ncol=1)
+  }
+  if (!missing(lab.sup) && is.data.frame(lab.sup)){
+      for (i in 1:ncol(lab.sup)) lab.sup[, i] <- as.character(lab.sup[, i])
+      lab.sup <- as.matrix(lab.sup)
   }
   
   if (!missing(pdfname)){
@@ -154,7 +165,7 @@ clustering.plot <- function(tree, tree.sup, data=NULL, lab, lab.sup, dendro=TRUE
           leg[which(is.na(leg))] <- "NA"
       }
          
-      legend("topleft",legend=unique(leg), fill=unique(as.colors(lall, palette=palette)), bty="n", cex=0.7, text.col="gray50")
+      legend(legend.pos,legend=unique(leg), fill=unique(as.colors(lall, palette=palette)), bty="n", cex=0.7, text.col="gray50")
       par(op1)
       par(op2)
     }
@@ -165,9 +176,9 @@ clustering.plot <- function(tree, tree.sup, data=NULL, lab, lab.sup, dendro=TRUE
       iml<-matrix(seq(from=mini.real, to=maxi.real, length.out=10), nrow=1)
       image(x=1, y=1:10, z=iml, axes=FALSE, ylab="", xlab="", col=heatcol, ...)
       if (trim.heatmap != 1){
-	axis(side=4, labels=c(paste("<",round(mini.real,1)),round(mean.ori,1),paste(">",round(maxi.real,1))), at=c(1,5.5,10), lwd=0.5, las=1, cex.axis=0.7, tick=FALSE,line=-0.7, ...)
+	axis(side=4, labels=c(paste("<",round(mini.real,1)),round((mini.real + maxi.real)/2,1),paste(">",round(maxi.real,1))), at=c(1,5.5,10), lwd=0.5, las=1, cex.axis=0.7, tick=FALSE,line=-0.7, ...)
       }else{
-	axis(side=4, labels=c(round(mini.real,1),round(mean.ori,1),round(maxi.real,1)), at=c(1,5.5,10), lwd=0.5, las=1, cex.axis=0.7, tick=FALSE,line=-0.7, ...)
+	axis(side=4, labels=c(round(mini.real,1),round((mini.real + maxi.real)/2,1),round(maxi.real,1)), at=c(1,5.5,10), lwd=0.5, las=1, cex.axis=0.7, tick=FALSE,line=-0.7, ...)
       }
       par(op1)
       par(op2)
@@ -197,7 +208,7 @@ clustering.plot <- function(tree, tree.sup, data=NULL, lab, lab.sup, dendro=TRUE
           leg[which(is.na(leg))] <- "NA"
       }
       
-      legend("topright",legend=unique(as.vector(leg)), fill=unique(as.colors(as.vector(lab), palette=palette)), bty="n", cex=0.7, text.col="gray50")
+      legend(legend.pos,legend=unique(as.vector(leg)), fill=unique(as.colors(as.vector(lab), palette=palette)), bty="n", cex=0.7, text.col="gray50")
     }
 
     if (names){

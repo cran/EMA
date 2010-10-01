@@ -8,7 +8,7 @@
 \usage{
 plotSample(acp, axes = c(1, 2), new.plot = FALSE, lab = "quality",
 palette="rainbow", lim.cos2.sample = 0, text = TRUE,
-lab.title = NULL, ...)
+lab.title = NULL, ellipse=FALSE, ...)
 }
 
 \arguments{
@@ -21,6 +21,8 @@ lab.title = NULL, ...)
   \item{palette}{characters. Name of a palette, By default, "rainbow" palette}
   \item{text}{add sample name or not, by default = TRUE}
   \item{lab.title}{title for the legend, by default = NULL}
+  \item{ellipse}{if TRUE and lab provided, draw 95$\%$ confidence
+  ellipse around barycentre of each group}
   \item{ ... }{Arguments to be passed to methods, such as graphical parameters (see 'par').}
 }
 
@@ -41,7 +43,7 @@ pca <- runPCA(t(example.subset), verbose = FALSE, plotInertia = FALSE, plotSampl
 
 ## Sample plot of PCA object colored by tumour type
 perso.colors <- colorRampPalette(c("red", "green"))
-plotSample(pca, lab = marty.type.cl, palette="perso.colors")
+plotSample(pca, lab = marty.type.cl, palette="perso.colors", ellipse=TRUE)
 
 }
 \keyword{plot}

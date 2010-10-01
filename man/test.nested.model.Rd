@@ -15,7 +15,8 @@ test.nested.model(X, X0, Y)
   \item{X0}{this is the design matrix corresponding to the sub-model. X0
     is such that span(X0) is a vectorial subspace of span(X). X0
     must be of full rank.}
-  \item{Y}{ this is a one column matrix corresponding to the dependent variable }
+  \item{Y}{ this is a matrix corresponding to the dependent variable
+    (samples in row, variables (e.g. genes) in column.}
 }
 \details{
   The F-statistic  is computed and the p-value is returned. The

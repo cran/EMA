@@ -32,6 +32,6 @@ clust.dist(mat, meth.dis="euclidean")
 }
 \author{EMA group}
 
-\seealso{ \code{\link{jaccard}},\code{\link{dice}}, \code{\link{rcorr}},\code{\link{daisy}}}
+\seealso{ \code{\link{jaccard}},\code{\link{dice}},\code{\link{daisy}}}
 \keyword{cluster}
 \keyword{internal}

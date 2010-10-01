@@ -1,5 +1,5 @@
 plotSample <-
-    function(acp, axes=c(1,2), new.plot=FALSE, lab="quality", palette="rainbow", lim.cos2.sample=0, text=TRUE, lab.title=NULL, ...) {
+    function(acp, axes=c(1,2), new.plot=FALSE, lab="quality", palette="rainbow", lim.cos2.sample=0, text=TRUE, lab.title=NULL, ellipse=FALSE, ...) {
     
     nind <- dim(acp$ind$coord)[1]
     col.PC <- rep("black", nind)
@@ -13,6 +13,8 @@ plotSample <-
         }
         else{
             col.PC <- as.colors(lab, palette=palette)
+            corresColLab <- unique(col.PC)
+            names(corresColLab) <- unique(lab)
         }
     }
     
@@ -23,7 +25,21 @@ plotSample <-
         text=NULL
     }
     
+    
+    
     plot.PCA(acp, axes=c(axes[1],axes[2]), col.ind=col.PC, title=paste("Sample representation \n Axes", axes[1], "and", axes[2]), new.plot=new.plot, label=text, cex=0.8, ...)
+    
+    ## ellipses have to be plotted by hand
+    if ((ellipse) && !is.null(lab) && (lab != "quality")){
+        aux <- cbind.data.frame(lab, acp$ind$coord[, axes])
+        coord.ell <- coord.ellipse(aux, bary=TRUE)$res
+        nbre.ellipse <- nlevels(coord.ell[, 1])
+        for (e in 1:nbre.ellipse) {
+            data.elli <- coord.ell[coord.ell[, 1] == levels(coord.ell[, 1])[e], -1]
+            lines(x = data.elli[, 1], y = data.elli[, 2], col = corresColLab[levels(coord.ell[, 1])[e]])
+        }
+    }
+    
     
     if (!is.null(lab)) {
         if ((length(lab) == 1)&&(lab == "quality")) {

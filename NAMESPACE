@@ -8,7 +8,7 @@ import("siggenes")
 import("MASS")
 import("biomaRt")
 
-importFrom("Hmisc","rcorr")
+#importFrom("Hmisc","rcorr")
 importFrom("multtest", "mt.rawp2adjp", "mt.teststat")
 importFrom("survival", "survdiff", "survfit")
 importFrom("xtable", "xtable")
