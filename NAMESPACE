@@ -1,0 +1,29 @@
+import("AnnotationDbi")
+import("cluster")
+import("FactoMineR")
+import("GOstats")
+import("rgl")
+import("GSA")
+import("siggenes")
+import("MASS")
+import("biomaRt")
+
+importFrom("Hmisc","rcorr")
+importFrom("multtest", "mt.rawp2adjp", "mt.teststat")
+importFrom("survival", "survdiff", "survfit")
+importFrom("xtable", "xtable")
+importFrom("gcrma","justGCRMA")
+
+
+## Don't need to import - no namespace
+#import("heatmap.plus")
+#import("affy")
+#import("RankProd")
+#import("hgu133plus.db")
+
+
+## Hidden functions
+## clust.dist, dice, FWER.Bonf, goReport, GSA.correlate.txt, htmlresult, jaccard, keggReport, MFAreport, qualitySample
+
+export("as.colors", "bioMartAnnot", "clustering", "clustering.plot","clustering.kmeans", "distrib.plot", "eval.stability.clustering", "expFilter", "foldchange", "genes.selection", "km", "multiple.correction", "myPalette", "normAffy", "plot3dSample", "plotInertia", "plotSample", "plotVariable", "PLS", "probePlots", "runGSA", "runHyperGO", "runHyperKEGG", "runIndTest", "runMFA", "runPCA", "runRankprod", "runSAM", "runTtest", "runWilcox", "sample.plot", "test.LC", "test.nested.model")
+
