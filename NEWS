@@ -1,4 +1,34 @@
 ********************
+Changes in EMA1.3.2
+********************
+
+- test.LC
+Add the 'global' parameter to specify if one want to perform a F test of the global hypothesis H0=0, or to test each contrast simultaneously
+
+- normAffy
+Add the fast argument for GCRMA normalisation
+
+- ordinal.chisq
+Chisq test for ordinal values
+
+- New utilities
+intersectg
+setdiffg
+
+- plot.sample
+Allow vector as input. Transformation in matrix.
+
+- expFilter
+Add p parameter to keep the probes if at least p*ncol(data) of its values is higher than the threshold
+
+- clustering.plot
+Remove pdf option
+Change the margin values.
+Calculate the margins taking into account the names and names.sup parameters
+
+
+
+********************
 Changes in EMA1.3.1
 ********************
 

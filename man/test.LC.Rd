@@ -13,8 +13,8 @@ test.LC(C, X, Y, global=FALSE, cor.multtest=TRUE,typeFDR="FDR-BH")
   \item{X}{Design matrix of the (generalized) linear model adjusted to the data.}
   \item{Y}{Vector or response matrix (e.g. a gene expression matrix) to which the (generalized) linear model is applied. If a matrix is specified the test(s) will be done on each column of the matrix.}
   \item{global}{logical indicating if one want to perform a F test of the global hypothesis H_0=0, or to test each contrast simultaneously }
-  \item{cor.multtest}{logical.If global=TRUE indicates if one want to apply a multiple test correction for the computation of the p-values}
-  \item{typeFDR}{If global=TRUE and cor.multtest=TRUE this argument is passed to the function multiple.correction(), it specifies which correction method to apply. See '?multiple.correction' for more details.}
+  \item{cor.multtest}{logical.If global=FALSE indicates if one want to apply a multiple test correction for the computation of the p-values}
+  \item{typeFDR}{If global=FALSE and cor.multtest=TRUE this argument is passed to the function multiple.correction(), it specifies which correction method to apply. See '?multiple.correction' for more details.}
 }
 \details{
 The design matrix X can be extracted from a (generalized) linear model with the function \code{\link{model.matrix}}.

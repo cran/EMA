@@ -25,5 +25,5 @@ importFrom("gcrma","justGCRMA")
 ## Hidden functions
 ## clust.dist, dice, FWER.Bonf, goReport, GSA.correlate.txt, htmlresult, jaccard, keggReport, MFAreport, qualitySample
 
-export("as.colors", "bioMartAnnot", "clustering", "clustering.plot","clustering.kmeans", "distrib.plot", "eval.stability.clustering", "expFilter", "foldchange", "genes.selection", "km", "multiple.correction", "myPalette", "normAffy", "plot3dSample", "plotInertia", "plotSample", "plotVariable", "PLS", "probePlots", "runGSA", "runHyperGO", "runHyperKEGG", "runIndTest", "runMFA", "runPCA", "runRankprod", "runSAM", "runTtest", "runWilcox", "sample.plot", "test.LC", "test.nested.model")
+export("as.colors", "bioMartAnnot", "clustering", "clustering.plot","clustering.kmeans", "distrib.plot", "eval.stability.clustering", "expFilter", "foldchange", "genes.selection", "intersectg", "setdiffg", "km", "multiple.correction", "myPalette", "normAffy", "ordinal.chisq", "plot3dSample", "plotInertia", "plotSample", "plotVariable", "PLS", "probePlots", "runGSA", "runHyperGO", "runHyperKEGG", "runIndTest", "runMFA", "runPCA", "runRankprod", "runSAM", "runTtest", "runWilcox", "sample.plot", "test.LC", "test.nested.model")
 

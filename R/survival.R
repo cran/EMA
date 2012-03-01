@@ -17,7 +17,8 @@ km <- function (time, status, group = NULL, xlab="Time (years)", ylab="", ...) {
     }
     
     fit <- survfit(Surv(time, status) ~ group, na.action = na.omit)
-    plot(fit, col = 1:n, xlab = xlab, ylab = ylab,  ...)
+    par(font.lab=2)
+    plot(fit, col = 1:n, xlab = xlab, ylab = ylab, ...)
     if (n != 1) {
         legend("topright", inset = 0.01, legend = names(summary(group))[names(summary(group)) != 
             "NA's"], bty = "n", lwd = rep(1, n), col = 1:n, cex = 0.7, 

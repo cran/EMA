@@ -241,10 +241,10 @@ The two groups of tumours (HER2+ in red and BLCs in blue) are clearly separated 
 \section{Differential Analysis}
  A standard approach to detect Differentially Expressed Genes (DEG) is to test the difference between means of the two groups (with Student or Mann-Whitney tests for example) and then to adjust for multiple testing by applying the Benjamini and Hochberg (BH) procedure (Benjamini and Hochberg, 1995)
 
-<<I, fig=TRUE, include=TRUE, keep.source=TRUE, echo=TRUE, eval=TRUE>>=
-### Student test with BH correction and qqplot of genes.
+<<I, fig=FALSE, include=TRUE, keep.source=TRUE, echo=TRUE, eval=TRUE>>=
+### Student test with BH correction
 marty.type.num <- ifelse(marty.type.cl=="Her2+",0,1)
-rt<-runTtest(marty.f, labels=marty.type.num,algo="t.equalvar", q=0.05)
+rt<-runTtest(marty.f, labels=marty.type.num, algo="t.equalvar", q=0.05, plot=FALSE)
 head(rt)
 @
 
@@ -330,11 +330,10 @@ time<-abs(rnorm(100))
 time[51:100]<-time[51:100]+2
 status<-sample(c(0,1),size=100,replace=TRUE)
 
-res<-km(time,status,group,title="Kaplan Meier curve")
+res<-km(time,status,group,main="Kaplan Meier curve")
 res$fit.km
 res$lr
 res$p.lr
-
 @
 
 \section{System Performance}

@@ -41,8 +41,10 @@ Returns a graphic containing the frequencies of methods declared stable
 \examples{
 data(marty)
 ## Test on a smaller dataset
+\dontrun{
 example.data<-marty[1:100,]
 stab<-eval.stability.clustering(example.data) 
+}
 }
 \keyword{cluster}
 
