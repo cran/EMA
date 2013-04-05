@@ -39,7 +39,7 @@ A list with
 \item{lr}{results provided by logrank analysis. See the R help on survdiff for details}
 \item{p.lr}{pvalue of the logrank test}
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{
 \code{\link{survfit}}, \code{\link{survdiff}}

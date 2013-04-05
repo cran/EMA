@@ -21,7 +21,7 @@ dice(mat)
  }
 \references{Dice, L.R. (1945), Measures of the amount of ecologic
   association between species, J. Ecology, 26, 297-302.}
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \keyword{cluster}
 \keyword{internal}

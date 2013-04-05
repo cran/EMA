@@ -18,7 +18,7 @@ plotInertia(acp, ncp = 5, ...)
  Barplot of component inertia percentage
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{runPCA}},\code{\link{PCA}}}
 \examples{

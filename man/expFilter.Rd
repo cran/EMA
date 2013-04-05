@@ -28,7 +28,7 @@ expFilter(data, threshold = 3.5, p=0.01, graph = TRUE)
 \value{
   An expression matrix.
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \examples{
 

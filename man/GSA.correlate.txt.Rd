@@ -24,7 +24,7 @@ GSA.correlate.txt(GSA.genesets.obj, genenames)
   only print output
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{
   \code{\link{GSA.read.gmt}} 

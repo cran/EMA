@@ -4,6 +4,54 @@
 ##
 ####
 
+makeAllContrasts <- function(X, annot){
+    ## change annot into data.frame if vector or factor
+    if(is.null(dim(annot))) annot <- as.data.frame(annot, row.names=rownames(X), stringsAsFactor=FALSE)
+    ## cast columns to character
+    for (i in 1:ncol(annot)) annot[,i] <- as.character(annot[,i])
+    ## find unique combinations of factors
+    uniqAnnot <- annot[!duplicated(annot), ,drop=FALSE]
+    ## remove the na's 
+    uniqAnnot <- uniqAnnot[!apply(uniqAnnot, 1, function(x) any(is.na(x))), ,drop=FALSE]
+
+    nbVar <- ncol(annot)
+
+    nbLevelsByVar <- apply(uniqAnnot, 2, function(x) length(unique(x)))
+
+    ## compute the number of tests
+    nbTests <- 0
+    for (i in 1:nbVar) nbTests <- nbTests + choose(nbLevelsByVar[i], 2) * prod(nbLevelsByVar[-i])
+    
+    ## create the contrasts matrix
+    C <- matrix(0, nrow=nbTests, ncol=ncol(X))
+    colnames(C) <- colnames(X)
+    rownames(C) <- 1:nbTests
+    
+    ## fill in the contrast matrix
+    idTest <- 1
+    for (i in 1:(nrow(uniqAnnot)-1)){
+        id1 <- rownames(uniqAnnot)[i]
+        id1Name <- paste(colnames(uniqAnnot), uniqAnnot[i,], collapse=".", sep="") 
+        
+        for (j in (i+1):nrow(uniqAnnot)){
+            if(sum(uniqAnnot[i,] != uniqAnnot[j,]) == 1) {
+                id2 <- rownames(uniqAnnot)[j]
+                              
+                id2Name <- paste(colnames(uniqAnnot), uniqAnnot[j,], collapse=".", sep="")
+                ids <- c(id1,id2)[order(c(id1Name,id2Name))]
+
+                C[idTest,] <- X[ids[2], ] - X[ids[1],]
+                
+                rownames(C)[idTest] <- paste(sort(c(id1Name, id2Name), decreasing=TRUE), collapse="-")
+
+                idTest <- idTest + 1
+            }
+        }
+    }
+    C <- C[order(rownames(C)), ,drop=FALSE]
+    return(C)
+}
+
 test.nested.model <- function(X,X0,Y) {
   r <- ncol(X)
   r0 <- ncol(X0)
@@ -131,56 +179,6 @@ runWilcox <-  function(data,labels,typeFDR="FDR-BH",q=0.05,plot=TRUE){
   }
 
   return (out)
-}
-
-runRankprod <- function(data,labels,q=0.05, plot=TRUE){
-
-  if (is.null(rownames(data))){
-    rownames(data)<-1:nrow(data)
-  }
-  
-  ori<-rep(1,ncol(data))
-  RP.out<-RPadvance(data, as.numeric(as.vector(labels)), ori, num.perm=100, logged=TRUE, gene.names=rownames(data), plot=FALSE)
-  res<-topGene(RP.out, cutoff=q)
-
-  ##Table1
-  p=as.vector(res$Table1[,"gene.index"])
-  out1<-NULL
-
-  if (length(p)>1){
-    out1<-data.frame(res$Table1[,2],res$Table1[,4:5],res$Table1[,3])
-    colnames(out1)<-c("RP/Rsum","AdjpValue","RawpValue","FC(class1/class2)")
-
-  }
-  else if (p==1){
-    out1<-as.data.frame(matrix(c(res$Table1[1,2],res$Table1[1,4:5],res$Table1[1,3]),nrow=1))
-    colnames(out1)<-c("RP/Rsum","AdjpValue","RawpValue","FC(class1/class2)")
-    
-  }   
-
-  ##Table2
-  p <- as.vector(res$Table2[,"gene.index"])
-  out2<-NULL
-  
-  if (length(p)>1){
-    out2<-data.frame(res$Table2[,2],res$Table2[,4:5],res$Table2[,3])
-    colnames(out2)<-c("RP/Rsum","AdjpValue","RawpValue","FC(class1/class2)")
-  }
-  else if (length(p)==1){
-    out2<-as.data.frame(matrix(c(res$Table2[1,2],res$Table2[1,4:5],res$Table2[1,3]),nrow=1))
-    colnames(out2)<-c("RP/Rsum","AdjpValue","RawpValue","FC(class1/class2)") 
-  }
- 
-  out<-list()
-  out$table1<-out1
-  out$table2<-out2
-
-  #Graphical plot
-  if (plot){
-    plotRP(RP.out, cutoff=q)
-  }
- 
-return(out)
 }
 
 
@@ -541,7 +539,7 @@ runGSA <- function(nData, labels, gmtfile, chip="hgu133plus2" ,np=1000, minsize=
   message("FDR chosen :", fdr)
   GSA.correlate.txt(geneset.obj, genenames)
 
-  results <- GSA.listsets(GSA.obj,geneset.names=geneset.obj$geneset.names, FDRcut=fdr)
+  results <- GSA.listsets(GSA.obj,geneset.names=geneset.obj$geneset.names, FDRcut=fdr, maxchar=150)
 
   ## genes scores for negative set
   gscore.negative=list()

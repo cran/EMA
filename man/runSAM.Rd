@@ -90,7 +90,7 @@ seed=123)
   analysis of microarrays applied to the ionizing radiation
   response. _PNAS_, 98, 5116-5121.
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{ \code{\link{sam}} }
 

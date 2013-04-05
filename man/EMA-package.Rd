@@ -28,7 +28,7 @@ For details, see vignette.
 }
 \author{
 N. Servant, E. Gravier, P. Gestraud, C. Paccard, C. Laurent, I. Brito, J. Mandel, A. Biton, B. Asselain, E. Barillot, P. Hupe.
-Maintainer: <ema-package@curie.fr>
+Maintainer: <pierre.gestraud@curie.fr>
 }
 \references{
   EMA - A R package for Easy Microarray data Analysis 

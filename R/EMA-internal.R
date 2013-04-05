@@ -1,2 +1,2 @@
 `.required` <-
-c("rgl", "FactoMineR")
+c("FactoMineR")

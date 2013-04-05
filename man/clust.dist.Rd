@@ -30,7 +30,7 @@ clust.dist(mat, meth.dis="euclidean")
 \value{
  A distance matrix.
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{ \code{\link{jaccard}},\code{\link{dice}},\code{\link{daisy}}}
 \keyword{cluster}

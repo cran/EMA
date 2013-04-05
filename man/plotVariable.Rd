@@ -26,7 +26,7 @@ plotVariable(acp, axes = c(1, 2), new.plot = FALSE, lab, lim.cos2.var =
   If PCA is normed, the correlation circle is plotted colored by lab
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{runPCA}},\code{\link{PCA}}}
 \examples{

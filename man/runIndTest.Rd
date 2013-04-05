@@ -31,7 +31,7 @@ grp.name=c("Group1","Group2"))
   A matrix with the gene names, the statistics, and the p-values.
 
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{shapiro.test}}, \code{\link{var.test}},\code{\link{t.test}},\code{\link{wilcox.test}}}
 \examples{

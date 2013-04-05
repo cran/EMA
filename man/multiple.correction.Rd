@@ -31,7 +31,7 @@ Statistical Society, Series B, 64: 479-498.
 - Benjamini Y., Kenigsberg E., Reiner A., Yekutieli D (2005). FDR
 adjustments of Microarray Experiments.
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{p.adjust}}}
 \examples{

@@ -21,7 +21,7 @@ as.colors(x, col.na="#E6E6E6",palette="rainbow", ...)
 A vector or matrix of color label.
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 \examples{
      lab1<-c(rep("a",5), rep("b",5))
      lab2<-c(rep("c",5), rep("a",5))

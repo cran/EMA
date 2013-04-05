@@ -28,7 +28,7 @@ htmlreport = TRUE, txtreport = TRUE, tabResult = FALSE, pvalue = 0.05)
 
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{hyperGTest}},\code{\link{runHyperGO}}}
 \examples{

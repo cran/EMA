@@ -180,7 +180,9 @@ In the following example, we show how the filtering step affects the PCA results
 
 <<E, fig=TRUE, include=TRUE, keep.source=TRUE, results=hide, echo=FALSE, height=5>>=
 ## PCA after normalisation and without filtering, but with scaling
-acp<-runPCA(t(marty), scale=TRUE, lab.sample=marty.type.cl, 
+## done on 1000 most variant variables
+mvgenes<-genes.selection(marty.f, thres.num=1000)
+acp<-runPCA(t(marty[mvgenes,]), scale=TRUE, lab.sample=marty.type.cl, 
             plotSample=FALSE, plotInertia=FALSE)
 
 ## Individual map (axe 1 and 2)
@@ -190,7 +192,7 @@ plotSample(acp,axes=c(1,2),lab=marty.type.cl)
 <<F, fig=TRUE, include=TRUE, keep.source=TRUE, results=hide, height=5, eval=TRUE>>=
 ##Gene representation (only genes the most correlated to the two first components)
 level.cl<-ifelse(apply(marty,1,max)>3.5,"High","Low")
-plotVariable(acp,axes=c(1,2),lim.cos2.var=0.8,lab=level.cl,label="")
+plotVariable(acp,axes=c(1,2),lim.cos2.var=0.8,lab=level.cl,label="none")
 @
 
 The main information provided by the data (summarised by axe 1) is not associated with the two groups of tumours. Only Axe 2 provides this information. It can be shown that Axe 1 is associated with the low expressed genes (high scaled signal level) rather than biological signal.
@@ -396,7 +398,7 @@ toLatex(sessionInfo())
 \bibitem[Dai {\it et~al}., 2005]{BrainArray} Dai M., Wang P., Boyd A.D., Kostov G., Athey B., Jones E.G., Bunney W.E., Myers R.M., Speed T.P., Akil H., Watson S.J., Meng F., Evolving gene/transcript definitions significantly alter the interpretation of GeneChip data, {\it Nucleic Acids Research}, 33(20):e175.
 \bibitem[Du {\it et~al}., 2008]{Lumi}  Du P., Kibbe W.A., Lin S.M., {\it lumi}:a pipeline for processing Illumina microarray, {\it Bioinformatics}. 2008;24(13):1547-1548
 \bibitem[Falcon {\it et~al}., 2007]{Falcon2007}Falcon S., Gentleman R, Using GOstats to test gene lists for GO term association, {\it Bioinformatics}. 2007 Jan 15;23(2):257-8
-\bibitem[Huber {\it et~al}., 2002]{vsn}Huber W., Von Heydebreck A., S�ltmann H., Poustka A. and Vingron M. (2002) Variance stabilization applied to microarray data calibration and to the quantification of differential expression.{\it Bioinformatics} 18: suppl. 1 (2002), S96-S104 (ISMB 2002).
+\bibitem[Huber {\it et~al}., 2002]{vsn}Huber W., Von Heydebreck A., SÃÂ¼ltmann H., Poustka A. and Vingron M. (2002) Variance stabilization applied to microarray data calibration and to the quantification of differential expression.{\it Bioinformatics} 18: suppl. 1 (2002), S96-S104 (ISMB 2002).
 \bibitem[Gentleman {\it et~al}., 2004]{BioC}Gentleman, R. C. and Carey, V. J. and Bates, D. M. and Bolstad, B. and Dettling, M. and Dudoit, S. and Ellis, B. and Gautier, L. and Ge, Y. and Gentry, J. and Hornik, K. and Hothorn, T. and Huber, W. and Iacus, S. and Irizarry, R. and Leisch, F. and Li, C. and Maechler, M. and Rossini, A. J. and Sawitzki, G. and Smith, C. and Smyth, G. and Tierney, L. and Yang, J. Y. and Zhang, J., Bioconductor: open software development for computational biology and bioinformatics, {\it Genome Biology}, 2004, 5, R80.
 \bibitem[Irizarry {\it et~al}., 2003]{Irizarry2003} Irizarry R.A., Hobbs,B. et al. (2003) Exploration, normalisation, and summaries of high density oligonucleotide array probe level data, {\it Biostatistics}, {\bf 4}, 249-254
 \bibitem[Kauflmann {\it et~al}., 2009]{arrayQualityMetrics} Kauflmann,A., Gentleman R., Huber W. (2009) ArrayQualityMetrics-a bioconductor package for quality assessment of microarray data, {\it Bioinformatics},vol. 25, no3.pp. 415-416

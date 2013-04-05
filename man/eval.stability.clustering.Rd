@@ -35,7 +35,7 @@ Returns a graphic containing the frequencies of methods declared stable
 }
 
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 \seealso{\code{\link{clustering}},\code{\link{clust.dist}}}
 
 \examples{

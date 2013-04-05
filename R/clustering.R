@@ -244,15 +244,14 @@ clustering.plot <- function(tree, tree.sup, data=NULL, lab, lab.sup, dendro=TRUE
       im<-matrix(as.numeric(lab.num),ncol=ncol(lab), nrow=nrow(lab))
       im <- as.matrix(im[tree$order,])
       
-      #par(mar=c(2,parmar[2],parmar[3],parmar[4]))
-      par(mar=c(2,parmar[2],0,parmar[4]))
+      par(mar=c(2,parmar[2],parmar[3],parmar[4]))
+      #par(mar=c(2,parmar[2],0,parmar[4]))
 
       image(x=1:length(tree$order), y=1:ncol(im),xlim=c(paru[1],paru[2]), z=im,axes=FALSE, ylab="", xlab="", col=unique(as.colors(as.vector(lab),palette=palette)),...)
   
       if (ncol(lab)>1){
-        #axis(side=4, labels=colnames(lab), at=1:ncol(im)-1, lwd=0.5, las=1, cex.axis=0.7, tick=FALSE, ...)
-        text(x=rep(-.3,ncol(im)),y=1:ncol(im), labels=colnames(lab), cex=.7, pos=4)
-
+        axis(side=2, labels=colnames(lab), at=1:ncol(im), lwd=0.5, las=1, cex.axis=0.7, tick=FALSE, ...)
+        #text(x=rep(-1,ncol(im)),y=1:ncol(im), labels=colnames(lab), cex=.7, pos=4)
       }
       else{
         axis(side=4, labels=FALSE, at=1:ncol(im), lwd=0.5, las=1, cex.axis=0.7, tick=FALSE, ...)

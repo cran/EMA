@@ -36,7 +36,7 @@ report.file = NULL, report.pdf = NULL)
   The analysis report can also be build later by using functun \code{\link{MFAreport}}.
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{MFA}}, \code{\link{plot.MFA}}, \code{\link{MFAreport}}}
 \examples{

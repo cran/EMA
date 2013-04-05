@@ -43,7 +43,7 @@ legendArrays=TRUE, legendProbes=TRUE, cex.axis=0.9, cex.legend=0.8, pdfName)
   The third one is an inter probes plot on the mis match. For each
   probes in the probeset, the mis match intensity in each arrays are plotted.
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \examples{
 \dontrun{

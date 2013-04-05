@@ -30,7 +30,7 @@ lab.title = NULL, ellipse=FALSE, ...)
   Sample representation on axes axes[1] and axes[2] colored by quality index (= cos2 of samples) or colored by lab
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 
 \seealso{\code{\link{runPCA}},\code{\link{PCA}}}

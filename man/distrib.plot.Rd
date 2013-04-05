@@ -27,7 +27,7 @@ distrib.plot(data, labels = NULL, plot = TRUE, ...)
   \item{counts }{n integers; for each cell, the number of 'x[]' inside.}
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{ \code{\link{hist}}}
 \examples{

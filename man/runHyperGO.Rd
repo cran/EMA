@@ -46,7 +46,7 @@ tabResult = FALSE, pvalue = 0.05)
   \item{CC}{Idem for Cellular Component}
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{hyperGTest}},\code{\link{runHyperKEGG}}}
 \examples{

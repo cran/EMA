@@ -38,7 +38,7 @@ default, the function returns  "description", "chromosome_name",
 }
 
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link[biomaRt]{useMart}}}
 \examples{

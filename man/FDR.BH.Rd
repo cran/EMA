@@ -23,7 +23,7 @@ FDR.BH(pval, TST = FALSE, q)
   A vector with the corrected pvalues.
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 \seealso{
 \code{\link[multtest]{mt.rawp2adjp}}}
 \keyword{internal}

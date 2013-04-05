@@ -22,7 +22,7 @@ foldchange(data, labels, unlog = TRUE)
 \value{
  A vector of length 'n genes' with the foldchange for each genes.
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \examples{
 ## load data

@@ -34,7 +34,7 @@ test.nested.model(X, X0, Y)
   ...
 }
 % \references{ ~put references to the literature/web site here ~ }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 % \note{ ~~further notes~~ 
 
 %  ~Make other sections like Warning with \section{Warning }{....} ~

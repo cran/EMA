@@ -42,7 +42,7 @@
    An object of class 'agnes' representing the clustering. See 'agnes.object' for details.
 }
 \references{ Kaufman, L. and Rousseeuw, P.J. (1990). Finding Groups in Data: An Introduction to Cluster Analysis. Wiley, New York.}
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{agnes}},\code{\link{clust.dist}}}
 \examples{

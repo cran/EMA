@@ -21,7 +21,7 @@ jaccard(mat)
 }
 \references{Jaccard, P. (1908), Nouvelles recherches sur la distribution
 lorale, Bull. Soc. Vaud. Sci. Nat., 44, 223-270.}
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \keyword{cluster}
 \keyword{internal}

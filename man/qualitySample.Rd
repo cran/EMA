@@ -18,7 +18,7 @@ qualitySample(acp, axes = c(1:3))
  A matrix with cos2 between samples and axes
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 
 \seealso{\code{\link{runPCA}}, \code{\link{PCA}}}

@@ -116,24 +116,6 @@ plotInertia <- function(acp, ncp=5, ...) {
 }
 
 
-plot3dSample <- function(acp, lab=NULL, palette="rainbow", ...) {  
-        
-    v <- acp$eig[1:3, 2]
-    cp1 <- round(v[1], digits = 2)
-    cp2 <- round(v[2], digits = 2)
-    cp3 <- round(v[3], digits = 2)
-    lab.x <- paste("Dimension ",1," (",cp1,"%)",sep="")
-    lab.y <- paste("Dimension ",2," (",cp2,"%)",sep="")
-    lab.z <- paste("Dimension ",3," (",cp3,"%)",sep="")
-    
-    if (is.null(lab)) {
-        plot3d(acp$ind$coord[, 1], acp$ind$coord[, 2], acp$ind$coord[, 3], xlab=lab.x, ylab=lab.y, zlab=lab.z, col="red", size=4, main="Sample Representation", ...)
-    } else {
-        col <- as.colors(lab, palette=palette)
-        plot3d(acp$ind$coord[, 1], acp$ind$coord[, 2], acp$ind$coord[, 3], xlab=lab.x, ylab=lab.y, zlab=lab.z, col=col, size=4, main="Sample Representation", ...)
-    }
-}
-
 
 #####
 ##
@@ -141,7 +123,7 @@ plot3dSample <- function(acp, lab=NULL, palette="rainbow", ...) {
 ##
 #####
 
-runPCA <- function(X, ncp=5, scale=TRUE, ind.sup=NULL, quanti.sup=NULL, quali.sup=NULL, sample.qual=TRUE, variable.qual=FALSE, sample.cont=TRUE, variable.cont=FALSE, plotSample=TRUE, plotVariable=FALSE, plotInertia = TRUE, plotBiplot=FALSE, plot3dSample=FALSE, lab.sample="quality", lab.var=NULL, palette="rainbow", lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=FALSE, ...) {
+runPCA <- function(X, ncp=5, scale=TRUE, ind.sup=NULL, quanti.sup=NULL, quali.sup=NULL, sample.qual=TRUE, variable.qual=FALSE, sample.cont=TRUE, variable.cont=FALSE, plotSample=TRUE, plotVariable=FALSE, plotInertia = TRUE, plotBiplot=FALSE, lab.sample="quality", lab.var=NULL, palette="rainbow", lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=FALSE, ...) {
     
     ## lot of options here ! try with ... ?
     ##  if (class(X) == "ExpressionSet") X <- exprs(X)
@@ -206,12 +188,6 @@ runPCA <- function(X, ncp=5, scale=TRUE, ind.sup=NULL, quanti.sup=NULL, quali.su
         plotVariable(acp, axes=c(1,2), new.plot=!pdf, lab=lab.var, lim.cos2.var=lim.cos2.var, palette=palette, ...)
         plotVariable(acp, axes=c(1,3), new.plot=!pdf, lab=lab.var, lim.cos2.var=lim.cos2.var, palette=palette, ...)
         plotVariable(acp, axes=c(2,3), new.plot=!pdf, lab=lab.var, lim.cos2.var=lim.cos2.var, palette=palette, ...)
-    }
-    
-    if (plot3dSample) {
-        if (!pdf)
-            x11()
-        plot3dSample(acp, lab=lab.sample, palette=palette, ...)
     }
     
     if (pdf) {

@@ -32,7 +32,7 @@ A list of matrices :
   \item{sigma2 }{A matrix with one row containing the residual variance for each gene}
   \item{theta }{A matrix containing the estimates of the effects of the original model. These estimates are the ones also obtained with summary.lm()}
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 \seealso{\code{\link{model.matrix}},\code{\link{lm}}}
 \examples{
 data(marty)

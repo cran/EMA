@@ -94,7 +94,7 @@ permutation of columns (done in GSEA).
   knowledge-based approach for interpreting genome-wide expression
   profiles. PNAS. 102, pg 15545-15550.
 }
-\author{ EMA group }
+\author{ Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe }
 
 \seealso{ \code{\link{GSA}}}
 

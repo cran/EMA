@@ -1,6 +1,6 @@
 \name{genes.selection}
 \alias{genes.selection}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{Genes selection}
 \description{
 Selects the most variant genes of a expression dataset. For each gene,
@@ -12,7 +12,7 @@ Range (IQR).
 \usage{
 genes.selection(data, thres.diff, thres.num, probs=0.25)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{data}{A expression matrix, genes on rows and samples on columns}
   \item{thres.diff}{Difference threshold - Genes are selected based on the difference threshold}
@@ -30,17 +30,15 @@ according to their difference value level, and the N first genes are selected.
  The name of the selected genes.
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{ \code{\link{IQR}}, \code{\link{quantile}}}
 \examples{
 data(marty)
 data.f<-expFilter(marty, graph=FALSE)
 
-##Select the most variant genes
-sel<-genes.selection(data.f, thres.num=100)
+##Select the 50 most variant genes amongst the 1000 first genes
+sel<-genes.selection(data.f[1:1000,], thres.num=50)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
 \keyword{manip}
 

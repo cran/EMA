@@ -28,7 +28,7 @@ MFAreport(resMFA, file.txt, file.pdf)
 \value{
   A txt file with the main statistics and a pdf file with the main graphics.
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{MFA}}, \code{\link{plot.MFA}}, \code{\link{runMFA}}}
 

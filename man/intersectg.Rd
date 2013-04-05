@@ -17,7 +17,7 @@ intersectg(...)
   A vector of intersection between the n objects
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 \examples{
 a<-1:10
 b<-2:7

@@ -43,14 +43,14 @@ trim.heatmap=1, palette="rainbow", legend=TRUE, legend.pos="topright", ...)
 }
 
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{clustering}},  \code{\link{heatmap.plus}}}
 \examples{
 data(marty)
 
-##Clustering on most variant genes
-mv.genes<-genes.selection(marty, thres.num=100)
+##Clustering on 50 most variant genes amongst 500 first 
+mv.genes<-genes.selection(marty[1:500,], thres.num=50)
 c.sample<-clustering(marty[mv.genes,], metric="pearson", metho="ward")
 clustering.plot(c.sample, lab=marty.type.cl, title="H.Clustering\nPearson-Ward")
 

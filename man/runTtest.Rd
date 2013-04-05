@@ -32,7 +32,7 @@ runTtest(data,labels,typeFDR="FDR-BH",algo="t", q=0.05, plot=TRUE)
 \value{
   A matrix with the probes ID, the statistics, the raw p-value and the adjust p-value
 }
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link[multtest]{mt.teststat}},\code{\link{multiple.correction}} }
 \examples{

@@ -23,7 +23,7 @@ The results are identical to those returned by SPSS
   Chisq statistics and pvalues
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 \examples{
 ##General hypothesis : was that participants who had experienced more traumatic events during childhood would be more likely to drop out of treatment.
 trau=matrix(c(25,13,9,10,6,31,21,6,2,3), byrow=TRUE, nrow=2)

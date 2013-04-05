@@ -7,8 +7,7 @@
 \usage{
 runPCA(X, ncp=5, scale=TRUE, ind.sup=NULL, quanti.sup=NULL,quali.sup=NULL,
 sample.qual=TRUE, variable.qual=FALSE, sample.cont=TRUE,variable.cont=FALSE,
-plotSample=TRUE, plotVariable=FALSE, plotInertia = TRUE,plotBiplot=FALSE,
-plot3dSample=FALSE, lab.sample="quality", lab.var=NULL,palette="rainbow",
+plotSample=TRUE, plotVariable=FALSE, plotInertia = TRUE,plotBiplot=FALSE, lab.sample="quality", lab.var=NULL,palette="rainbow",
 lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=FALSE, ...) 
 }
 \arguments{
@@ -26,7 +25,6 @@ lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=FALSE, ...)
   \item{plotVariable}{a boolean, if TRUE variables are displayed, by default = FALSE}
   \item{plotInertia}{a boolean, if TRUE inertia percentage of components is displayed, by default = TRUE}
   \item{plotBiplot}{a boolean, if TRUE biplot is displayed, by default = FALSE}
-  \item{plot3dSample}{a boolean, if TRUE sample 3D plot is displayed, by default = FALSE}
   \item{lab.sample}{a vector, sample representation is colored by label.sample, by default = NULL}
   \item{lab.var}{a vector, variable representation is colored by label.var, by default = "quality"}
   \item{palette}{character, name of palette color, by default = "rainbow"}
@@ -49,7 +47,7 @@ By default, print sample coordinates, sample quality and sample contribution
 
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{plotSample}}, \code{\link{plotVariable}}, \code{\link{plotInertia}}}
 \examples{

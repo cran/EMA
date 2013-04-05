@@ -21,7 +21,7 @@ keggReport(hgOver,fileout = "report.txt", pack.annot, pvalue = 0.05)
  Txt report with the results of a call to 'hyperGTest'
 }
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \seealso{\code{\link{hyperGTest}},\code{\link{runHyperKEGG}}}
 \keyword{print}

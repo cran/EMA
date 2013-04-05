@@ -23,7 +23,7 @@ sample.plot(data, labels=NULL, plot=TRUE, ...)
 }
 
 
-\author{EMA group}
+\author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 \examples{
 
