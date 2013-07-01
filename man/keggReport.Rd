@@ -17,13 +17,18 @@ keggReport(hgOver,fileout = "report.txt", pack.annot, pvalue = 0.05)
   \item{pvalue}{cutoff for significant pvalue, by default 0.05}
 }
 
+\details{
+  \code{keggReport} needs packages \code{GOstats} and \code{KEGG.db} from Bioconductor.
+  
+}
+
 \value{
  Txt report with the results of a call to 'hyperGTest'
 }
 
 \author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
-\seealso{\code{\link{hyperGTest}},\code{\link{runHyperKEGG}}}
+\seealso{\code{\link[GOstats]{hyperGTest}},\code{\link{runHyperKEGG}}}
 \keyword{print}
 \keyword{internal}
 

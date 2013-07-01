@@ -49,7 +49,6 @@ normAffy <- function(filenames, celfile.path, method=c("GCRMA","RMA","MAS5"), cd
         normData <- log2(exprs(normData))
     }
     if (method == "GCRMA"){
-        require(gcrma)
         print("--- justGCRMA normalization ---")
         normData <- justGCRMA(filenames=filenames, celfile.path=celfile.path, type="affinities", cdfname=cdfname, fast=fast)
         normData <- exprs(normData)

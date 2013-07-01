@@ -45,14 +45,16 @@ A list with
 \code{\link{survfit}}, \code{\link{survdiff}}
 }
 \examples{
-time<-aml$time
-status<-aml$status
+require(survival)
+data(leukemia)
+time<-leukemia$time
+status<-leukemia$status
 # One group
 res<-km(time,status)
 res$fit.km
 
 # Two groups
-group<-aml$x
+group<-leukemia$x
 res<-km(time,status,group)
 res<-km(time,status,group,title="Kaplan Meier curve")
 res<-km(time,status,group,title="Kaplan Meier curve",pdfname="My survival curve")

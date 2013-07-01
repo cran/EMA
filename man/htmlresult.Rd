@@ -17,6 +17,10 @@ htmlresult(hgOver, filename, app = FALSE, categorySize = 1, pvalue=0.05)
   \item{pvalue}{the pvalue threshold for significance, default =0.05}
 }
 
+\details{
+  \code{htmlresult} needs packages \code{GOstats} and \code{GO.db} from Bioconductor.
+}
+
 \value{
   An html report with the result from a call to 'hyperGTest'
 
@@ -25,7 +29,7 @@ htmlresult(hgOver, filename, app = FALSE, categorySize = 1, pvalue=0.05)
 
 \author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
-\seealso{\code{\link{hyperGTest}},\code{\link{runHyperGO}}}
+\seealso{\code{\link[GOstats]{hyperGTest}},\code{\link{runHyperGO}}}
 
 \keyword{print}
 \keyword{internal}

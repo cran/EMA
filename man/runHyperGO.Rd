@@ -36,7 +36,8 @@ tabResult = FALSE, pvalue = 0.05)
   Moreover the most insteresting genesets are not necessarily the ones with the smallest pvalues. Nodes that are interesting are typically those with a reasonable number of genes (10 or more)
   and small pvalues. 
 
-  
+  \code{runHyperGO} needs packages \code{GOstats} and \code{GO.db} from Bioconductor.
+
 }
 
 \value{
@@ -48,7 +49,7 @@ tabResult = FALSE, pvalue = 0.05)
 
 \author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
-\seealso{\code{\link{hyperGTest}},\code{\link{runHyperKEGG}}}
+\seealso{\code{\link[GOstats]{hyperGTest}},\code{\link{runHyperKEGG}}}
 \examples{
 \dontrun{
 require(hgu133plus2.db)

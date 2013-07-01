@@ -19,6 +19,10 @@ pack.annot, pvalue = 0.05, categorySize=1)
   \item{categorySize}{integer, minimum size for category, by default = 1}
 }
 
+\details{
+  \code{goReport} needs packages \code{GOstats} and \code{GO.db} from Bioconductor.
+}
+
 \value{
   Txt report with the results of a call to 'hyperGTest'
 }
@@ -26,7 +30,8 @@ pack.annot, pvalue = 0.05, categorySize=1)
 \author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
 
-\seealso{ \code{\link{hyperGTest}},\code{\link{runHyperGO}}}
+\seealso{
+  \code{\link[GOstats]{hyperGTest}}, \code{\link{runHyperGO}} }
 
 \keyword{print}
 \keyword{internal}

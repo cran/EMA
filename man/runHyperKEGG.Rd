@@ -28,9 +28,13 @@ htmlreport = TRUE, txtreport = TRUE, tabResult = FALSE, pvalue = 0.05)
 
 }
 
+\details{
+  \code{runHyperKEGG} needs packages \code{GOstats} and \code{KEGG.db} from Bioconductor.
+}  
+
 \author{Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe}
 
-\seealso{\code{\link{hyperGTest}},\code{\link{runHyperGO}}}
+\seealso{\code{\link[GOstats]{hyperGTest}},\code{\link{runHyperGO}}}
 \examples{
 \dontrun{
 require(hgu133plus2.db)

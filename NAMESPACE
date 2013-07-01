@@ -1,28 +1,69 @@
-import("AnnotationDbi")
-import("cluster")
-import("FactoMineR")
-import("GOstats")
-import("GSA")
-import("siggenes")
-import("MASS")
-import("biomaRt")
+## imports
 
-#importFrom("Hmisc","rcorr")
-importFrom("multtest", "mt.rawp2adjp", "mt.teststat")
-importFrom("survival", "survdiff", "survfit")
-importFrom("xtable", "xtable")
-importFrom("gcrma","justGCRMA")
+import(siggenes)
+
+importFrom(affy, justRMA, list.celfiles, ReadAffy, mas5,
+           probeset, pm, mm)
+
+importFrom(multtest, mt.rawp2adjp, mt.teststat,
+           mt.reject, mt.teststat.num.denum)
+
+importFrom(survival, survdiff, Surv, survfit)
+
+importFrom(xtable, xtable)
+
+importFrom(gcrma,justGCRMA)
+
+importFrom(heatmap.plus, heatmap.plus)
+
+importFrom(biomaRt, useMart, getBM)
+
+importFrom(GSA, GSA, GSA.read.gmt, GSA.listsets, GSA.genescores)
+
+importFrom(MASS, ginv)
+
+importFrom(FactoMineR, PCA, plot.PCA, MFA, plot.MFA,
+           coord.ellipse, write.infile)
+
+importFrom(cluster, agnes, daisy, diana, pam)
 
 
-## Don't need to import - no namespace
-#import("heatmap.plus")
-#import("affy")
-#import("RankProd")
-#import("hgu133plus.db")
 
-
-## Hidden functions
-## clust.dist, dice, FWER.Bonf, goReport, GSA.correlate.txt, htmlresult, jaccard, keggReport, MFAreport, qualitySample
-
-export("as.colors", "bioMartAnnot", "clustering", "clustering.plot","clustering.kmeans", "distrib.plot", "eval.stability.clustering", "expFilter", "foldchange", "genes.selection", "intersectg", "setdiffg", "km", "multiple.correction", "myPalette", "normAffy", "ordinal.chisq", "plotInertia", "plotSample", "plotVariable", "PLS", "probePlots", "runGSA", "runHyperGO", "runHyperKEGG", "runIndTest", "runMFA", "runPCA", "runSAM", "runTtest", "runWilcox", "sample.plot", "test.LC", "test.nested.model", "makeAllContrasts")
+## exported functions
+export(as.colors,
+       bioMartAnnot,
+       clustering,       
+       clustering.plot,
+       clustering.kmeans,
+       distrib.plot,
+       eval.stability.clustering,
+       expFilter,
+       foldchange,
+       genes.selection,
+       intersectg,
+       setdiffg,
+       km,
+       multiple.correction,
+       myPalette,
+       normAffy,
+       ordinal.chisq,
+       plotInertia,
+       plotSample,
+       plotVariable,
+       PLS,
+       probePlots,
+       runGSA,
+       runHyperGO,
+       runHyperKEGG,
+       runIndTest,
+       runMFA,
+       runPCA,
+       runSAM,
+       runTtest,
+       runWilcox,
+       sample.plot,
+       test.LC,
+       test.nested.model,
+       makeAllContrasts
+       )
 
