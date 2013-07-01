@@ -7,7 +7,8 @@
 \usage{
 runPCA(X, ncp=5, scale=TRUE, ind.sup=NULL, quanti.sup=NULL,quali.sup=NULL,
 sample.qual=TRUE, variable.qual=FALSE, sample.cont=TRUE,variable.cont=FALSE,
-plotSample=TRUE, plotVariable=FALSE, plotInertia = TRUE,plotBiplot=FALSE, lab.sample="quality", lab.var=NULL,palette="rainbow",
+plotSample=TRUE, plotVariable=FALSE, plotInertia = TRUE, plotBiplot=FALSE,
+lab.sample="quality", lab.var=NULL,palette="rainbow",
 lim.cos2.sample=0, lim.cos2.var=0, pdf=FALSE, pdfname= NULL, verbose=FALSE, ...) 
 }
 \arguments{

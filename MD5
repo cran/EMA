@@ -1,4 +1,4 @@
-b51e3fcc4d0215e9094d5096e7615f39 *DESCRIPTION
+e286d94f94b71281cca86801cda75327 *DESCRIPTION
 f4fc673f79750700fe05091b13047d7f *NAMESPACE
 6b0812f2d72143bc44a0faee51e7023c *NEWS
 1f83cfb5d669e473c5a1fe13d71f1bb9 *R/EMA-internal.R
@@ -14,8 +14,8 @@ dae39772f35ab6644579b85aaf27f350 *R/utils.R
 68ed76b270801ddfa62646104fd41f66 *data/datalist
 caaa5c0021951df232f463df2eaa2a5f *data/marty.RData
 51ba43a499c7b479c35fa0ecfbc5bbe9 *inst/doc/EMA_vignette.R
-f5b1e8028820b52a51ce635e446a84cc *inst/doc/EMA_vignette.Rnw
-23a541c1880f85f11d808a85d8cafab6 *inst/doc/EMA_vignette.pdf
+160b8a58103ca2d6dda94d37e2d2ecc2 *inst/doc/EMA_vignette.Rnw
+3f0016f5bc48767b3dd1efed85ca82b9 *inst/doc/EMA_vignette.pdf
 249f2f71ee4bf3f23cd463af922efbfa *man/EMA-package.Rd
 3d0b8b3c016eaeb41133e7f802748df1 *man/FDR.BH.Rd
 51f918c01c5bd756f78f164fbb72fb20 *man/FWER.Bonf.Rd
@@ -48,7 +48,7 @@ c60fa9c5c4e7970159b6cfb69b0f1196 *man/makeAllContrasts.Rd
 d3b84ca3eecc260008540a8f70ce0314 *man/multiple.correction.Rd
 e10e8202a7e61dba493ea6fb5fc643c6 *man/myPalette.Rd
 2bb6a5fdff776e2b98aebb717ab2dd36 *man/normAffy.Rd
-e34a1a9acecd3579cda02547e5fcc407 *man/ordinal.chisq.Rd
+058b8850e531cadb878c225ec4c3699f *man/ordinal.chisq.Rd
 004d457b148e4f69d2424018d574765d *man/plotBiplot.Rd
 14a2c2cae3c32db363d478a801d5da3b *man/plotInertia.Rd
 491df6005aad5854f9caa293bc70b893 *man/plotSample.Rd
@@ -60,7 +60,7 @@ d977538c0fc4eade0cb3d5e5d1c56648 *man/qualitySample.Rd
 ff946fd90131d04a1fdafe8f10256d6e *man/runHyperKEGG.Rd
 ca330b0ab35b36f4ec7e2578a30fe95c *man/runIndTest.Rd
 ee10562b369790647cb453067179cfd3 *man/runMFA.Rd
-ee12628d3e4cd602e5bc1a714117d191 *man/runPCA.Rd
+c14a7707a81167d9562b4fad116154f0 *man/runPCA.Rd
 45544588625fd0297cedcb39f022f7d4 *man/runSAM.Rd
 6796923236627f033ace566d0706fcaf *man/runTtest.Rd
 ed00af15d96bad10255e4617e4a95eae *man/runWilcox.Rd
@@ -68,3 +68,4 @@ d4e2739ecbfac0dd998534ee3c6c6f94 *man/sample.plot.Rd
 37a6f00e03f0c986619ccaba89959050 *man/setdiffg.Rd
 a44bcf7406a72b2d7022994d45660eb6 *man/test.LC.Rd
 c1fcf9f2e4576009d2a8c65f8ee0d412 *man/test.nested.model.Rd
+160b8a58103ca2d6dda94d37e2d2ecc2 *vignettes/EMA_vignette.Rnw
