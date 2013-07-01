@@ -374,7 +374,7 @@ runIndTest<-function (data, labels, gene.names = NULL, plot = TRUE, dirname= NUL
                 if (!is.null(dirname)){
                     dirnamepng=paste(dirname,"/",rownames(data)[i],".png",sep="")
                     bitmap(file=dirnamepng,type="png16m",taa=4, gaa=4, height = 6, width = 6, res=150)
-                }else{x11()}
+                }else{dev.new()}
                 
                 hg1 <- hist(grp1[i, ], plot = FALSE)
                 hg2 <- hist(grp2[i, ], plot = FALSE)

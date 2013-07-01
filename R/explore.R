@@ -38,14 +38,14 @@ sample.plot <- function(data, labels=NULL, plot=TRUE, ...){
       }
 
       if (plot){
-        x11()
+        dev.new()
         barplot(x.g,names.arg=x.name,axis.lty=1,las=2,col=x.col, ylab='Expression Level',main = paste("Expression level of",id), cex.axis=0.7, cex.lab=0.7, cex.main=0.8, cex.names=0.6, ylim=c(0,(max(x,na.rm=TRUE)+1)),...)
         legend(x=-1,y=(max(x,na.rm=TRUE)+1),x.leg,fill=col, bty="n", cex=0.7, text.col="gray50")
       }
     }
     else{
       if (plot){
-        x11()
+        dev.new()
         barplot(x,names.arg=s.name, axisnames=TRUE,las=2,col="blue", ylab='Expression Level',main = paste("Expression level of",id), cex.axis=0.7, cex.lab=0.7, cex.main=0.8, cex.names=0.6, ...)
       }
     }
@@ -69,7 +69,7 @@ distrib.plot <- function(data, labels=NULL, plot=TRUE, ...){
     
     ##For each variable
     apply(data,1,exp_grp<-function(x){
-        x11()
+        dev.new()
         id<-x[1]
         x<-as.numeric(x[-1])
         

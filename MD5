@@ -1,13 +1,13 @@
-e286d94f94b71281cca86801cda75327 *DESCRIPTION
+cb36ec49d4014273a57cbdb3d060050b *DESCRIPTION
 f4fc673f79750700fe05091b13047d7f *NAMESPACE
 6b0812f2d72143bc44a0faee51e7023c *NEWS
 1f83cfb5d669e473c5a1fe13d71f1bb9 *R/EMA-internal.R
-c22d69e3f92dfd1ba9ad42dd3d24b952 *R/anadiff.R
+afa545dec299560a4c4c5ce1259ae921 *R/anadiff.R
 c9eccf22b285e2307e9f504e4db075a7 *R/anafunc.R
 fbe5bd4292f7968808c747e7d9ce4486 *R/clustering.R
-55f4872794e5dafde731cb82c2ff2d30 *R/explore.R
+853094f0eb1757637c9a2be2300b2ed6 *R/explore.R
 6c6422ea400eccd509ca7c19d6a9f80e *R/norm.R
-6d4fcdbb290e9f7a77caea72319ef12a *R/pca.R
+be847db60e291519f9f4d23570c8b2e0 *R/pca.R
 cf83ca02627825a0a9f1b3334cc03bd6 *R/survival.R
 dae39772f35ab6644579b85aaf27f350 *R/utils.R
 8d701070139861d0685eebffa9f6e0e0 *R/zzz.R
@@ -15,7 +15,7 @@ dae39772f35ab6644579b85aaf27f350 *R/utils.R
 caaa5c0021951df232f463df2eaa2a5f *data/marty.RData
 51ba43a499c7b479c35fa0ecfbc5bbe9 *inst/doc/EMA_vignette.R
 160b8a58103ca2d6dda94d37e2d2ecc2 *inst/doc/EMA_vignette.Rnw
-3f0016f5bc48767b3dd1efed85ca82b9 *inst/doc/EMA_vignette.pdf
+7b8b31d8977292bc4226c1cb60e56cb0 *inst/doc/EMA_vignette.pdf
 249f2f71ee4bf3f23cd463af922efbfa *man/EMA-package.Rd
 3d0b8b3c016eaeb41133e7f802748df1 *man/FDR.BH.Rd
 51f918c01c5bd756f78f164fbb72fb20 *man/FWER.Bonf.Rd

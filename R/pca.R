@@ -170,7 +170,7 @@ runPCA <- function(X, ncp=5, scale=TRUE, ind.sup=NULL, quanti.sup=NULL, quali.su
         
     if (plotInertia) {
         if (!pdf)
-            x11()
+            dev.new()
         plotInertia(acp, ncp=ncp, ...)
     }
     
