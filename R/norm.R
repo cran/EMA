@@ -58,6 +58,6 @@ normAffy <- function(filenames, celfile.path, method=c("GCRMA","RMA","MAS5"), cd
         normData=normData[-grep("AFFX", rownames(normData)),]
     }
     
-    normData
+    return(normData)
 }
 

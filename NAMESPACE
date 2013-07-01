@@ -27,7 +27,7 @@ importFrom(FactoMineR, PCA, plot.PCA, MFA, plot.MFA,
 
 importFrom(cluster, agnes, daisy, diana, pam)
 
-
+importFrom(AnnotationDbi, as.list, mget)
 
 ## exported functions
 export(as.colors,

@@ -1,7 +1,7 @@
 Package: EMA
 Type: Package
 Title: Easy Microarray data Analysis
-Version: 1.4.3
+Version: 1.4.4
 Date: 2013-07-01
 Author: Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe
 Maintainer: Pierre Gestraud <pierre.gestraud@curie.fr>
@@ -10,9 +10,10 @@ License: GPL-3
 LazyLoad: yes
 Depends: R (>= 2.10)
 Imports: siggenes, affy, multtest, survival, xtable, gcrma,
-        heatmap.plus, biomaRt, GSA, MASS, FactoMineR, cluster
+        heatmap.plus, biomaRt, GSA, MASS, FactoMineR, cluster,
+        AnnotationDbi
 Suggests: hgu133plus2.db, lumi, vsn, GOstats, GO.db
-Packaged: 2013-08-05 15:25:32 UTC; gestraud
+Packaged: 2014-03-28 10:07:09 UTC; gestraud
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-08-05 18:11:17
+Date/Publication: 2014-03-28 12:03:43

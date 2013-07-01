@@ -58,7 +58,7 @@ data(marty)
 ## Probe list
 probeList <- rownames(marty)[1:50]
 
-## Hypergeometric test for KEGG pathway
+## Hypergeometric test for GO pathway
 res <- runHyperGO(probeList, htmlreport = FALSE, txtreport = FALSE,
     tabResult = TRUE, pack.annot = "hgu133plus2.db")
 }
