@@ -1,5 +1,5 @@
 runHyperGO <- function(list, pack.annot, categorySize = 1, verbose = TRUE, name = "hyperGO", htmlreport = TRUE, txtreport = TRUE, tabResult = FALSE, pvalue = 0.05) {
-    if (require(GOstats))
+    if (requireNamespace("GOstats", quietly=TRUE))
     {
         require(pack.annot, character.only=TRUE)
         
@@ -57,9 +57,9 @@ runHyperGO <- function(list, pack.annot, categorySize = 1, verbose = TRUE, name 
         params.MF.over <- new("GOHyperGParams", geneIds = selectedEntrezIds, universeGeneIds = entrezUniverse, annotation = pack.annot, ontology = "MF", pvalueCutoff = 0.05, conditional = TRUE, testDirection = "over")
         params.CC.over <- new("GOHyperGParams", geneIds = selectedEntrezIds, universeGeneIds = entrezUniverse, annotation = pack.annot, ontology = "CC", pvalueCutoff = 0.05, conditional = TRUE, testDirection = "over")
         
-        hgOver.BP <- hyperGTest(params.BP.over)
-        hgOver.MF <- hyperGTest(params.MF.over)
-        hgOver.CC <- hyperGTest(params.CC.over)
+        hgOver.BP <- Category::hyperGTest(params.BP.over)
+        hgOver.MF <- Category::hyperGTest(params.MF.over)
+        hgOver.CC <- Category::hyperGTest(params.CC.over)
         
         if (htmlreport){
             htmlresult(hgOver.BP, filename = filehtmlGO, app = TRUE, categorySize = categorySize, pvalue = pvalue)
@@ -82,12 +82,12 @@ runHyperGO <- function(list, pack.annot, categorySize = 1, verbose = TRUE, name 
         } else{
             return(list(BP = hgOver.BP, MF = hgOver.MF, CC = hgOver.CC))
         }
-    } else stop("Failed to load required package GOstats.")
+   } else stop("Failed to load required package GOstats.")
     
 }
 
 runHyperKEGG <- function(list, pack.annot, categorySize = 1, name = "hyperKEGG", htmlreport = TRUE, txtreport = TRUE, tabResult = FALSE, pvalue = 0.05) {
-    if (require(GOstats)){
+    if (requireNamespace("GOstats", quietly = TRUE)){
         require(pack.annot, character.only=TRUE)
         
         pack.annot.EID <- eval(as.name(paste(gsub(".db", "", pack.annot), "ENTREZID", sep="")))
@@ -115,7 +115,7 @@ runHyperKEGG <- function(list, pack.annot, categorySize = 1, name = "hyperKEGG",
         selectedEntrezIds <- na.omit(unique(unlist(selectedEntrezIds)))
         params.KEGG.over <-new("KEGGHyperGParams", geneIds=selectedEntrezIds, universeGeneIds=entrezUniverse, annotation = pack.annot.KEGG, pvalueCutoff=0.05, testDirection="over")
         
-        hgOver.KEGG <- hyperGTest(params.KEGG.over)
+        hgOver.KEGG <- Category::hyperGTest(params.KEGG.over)
         
         if (htmlreport){
             htmlheader(paste(date(), "<br>KEGG HyperGeometric Analysis<br>", "<br>List length:", length(listALL),"<br><br>"), filename = filehtmlKEGG)
@@ -138,12 +138,12 @@ runHyperKEGG <- function(list, pack.annot, categorySize = 1, name = "hyperKEGG",
 ####
 
 htmlresult <- function(hgOver, filename, app = FALSE, categorySize = 1, pvalue = 0.05) {
-  write(paste("<br>------<br>", length(geneIdUniverse(hgOver, cond = conditional(hgOver))), testName(hgOver)[1], testName(hgOver)[2], "ids tested(", dim(summary(hgOver, pvalue = 0.05))[1], " p<0.05)<br>"), file = filename, append = app)
-  write(paste("Gene universe size:", universeMappedCount(hgOver)), file = filename, append = TRUE)
-  write(paste("<br>Selected gene set size:", geneMappedCount(hgOver)), file = filename, append = TRUE)
-  write(paste("<br>Conditional:", conditional(hgOver)), file = filename, append = TRUE)
-  write(paste("<br>Annotation:", annotation(hgOver), "<br><br>"), file = filename, append = TRUE)
-  htmlReport(hgOver, summary.args = list(htmlLinks = TRUE, categorySize = categorySize, pvalue = pvalue), file = filename, append = TRUE)
+  write(paste("<br>------<br>", length(GOstats::geneIdUniverse(hgOver, cond = Category::conditional(hgOver))), Category::testName(hgOver)[1], Category::testName(hgOver)[2], "ids tested(", dim(summary(hgOver, pvalue = 0.05))[1], " p<0.05)<br>"), file = filename, append = app)
+  write(paste("Gene universe size:", Category::universeMappedCount(hgOver)), file = filename, append = TRUE)
+  write(paste("<br>Selected gene set size:", GOstats::geneMappedCount(hgOver)), file = filename, append = TRUE)
+  write(paste("<br>conditional:", Category::conditional(hgOver)), file = filename, append = TRUE)
+  write(paste("<br>Annotation:", BiocGenerics::annotation(hgOver), "<br><br>"), file = filename, append = TRUE)
+  Category::htmlReport(hgOver, summary.args = list(htmlLinks = TRUE, categorySize = categorySize, pvalue = pvalue), file = filename, append = TRUE)
 }
 
 htmlheader <- function(towrite, filename) {
@@ -159,18 +159,18 @@ keggReport <-function(hgOver, fileout = "report.txt", pack.annot, pvalue = 0.05)
   write(file = fileout, paste("KEGG HyperGTest report\n"), append = FALSE, sep = ",")
   entrez <- unlist(as.list(pack.annot.EID))
 
-  a <- geneIdsByCategory(hgOver)
-  b <- geneIdUniverse(hgOver, cond=conditional(hgOver))
+  a <- Category::geneIdsByCategory(hgOver)
+  b <- Category::geneIdUniverse(hgOver, cond=Category::conditional(hgOver))
   
-  a <- a[sigCategories(hgOver, pvalue)]
-  b <- b[sigCategories(hgOver, pvalue)]
+  a <- a[Category::sigCategories(hgOver, pvalue)]
+  b <- b[Category::sigCategories(hgOver, pvalue)]
   
   for (i in as.vector(unlist(attributes(a)))) {
     if (length(b[[i]])>10) {
       write(file = fileout, paste("\n",i,":", length(a[[i]]), " geneIds | ", length(b[[i]]), " universIds"), append = TRUE, sep = ",", ncolumns = length(a[[i]]))
       
       pbset <- unique(names(entrez[which(is.element(entrez, a[[i]]))]))
-      pbset <- intersect(pbset, unique(names(entrez[is.element(entrez,geneIds(hgOver))])))
+      pbset <- intersect(pbset, unique(names(entrez[is.element(entrez, GSEABase::geneIds(hgOver))])))
       write(file = fileout, paste(length(pbset),"ProbeSets :"), append = TRUE, sep = ",")
       write(file = fileout, pbset, append = TRUE, sep=",", ncolumns = length(pbset))
       
@@ -199,18 +199,18 @@ goReport <- function(hgOver, fileout = "report.txt", type = c("CC", "MF", "BP"),
   }
   entrez <- mget(unique(unlist(probes)), pack.annot.EID)
 
-  a <- geneIdsByCategory(hgOver)
-  b <- geneIdUniverse(hgOver, cond=conditional(hgOver))
+  a <- Category::geneIdsByCategory(hgOver)
+  b <- Category::geneIdUniverse(hgOver, cond=Category::conditional(hgOver))
   
-  a <- a[sigCategories(hgOver, pvalue)]
-  b <- b[sigCategories(hgOver, pvalue)]
+  a <- a[Category::sigCategories(hgOver, pvalue)]
+  b <- b[Category::sigCategories(hgOver, pvalue)]
   
   for (i in as.vector(unlist(attributes(a)))) {
     if (length(b[[i]]) > categorySize) {
       write(file = fileout, paste("\n",i,":", length(a[[i]]), " geneIds | ", length(b[[i]]), " universIds"), append = TRUE, sep=",", ncolumns = length(a[[i]]))
       
       pbset <- unique(names(unlist(entrez[which(entrez%in%a[[i]])])))
-      pbset <- intersect(pbset, unique(names(entrez[is.element(entrez,geneIds(hgOver))])))
+      pbset <- intersect(pbset, unique(names(entrez[is.element(entrez,GSEABase::geneIds(hgOver))])))
       write(file = fileout, paste(length(pbset),"ProbeSets :"), append = TRUE, sep = ",")
       write(file = fileout, pbset, append = TRUE, sep = ",",ncolumns = length(pbset))
       

@@ -239,7 +239,7 @@ PLS <- function(E,F,n=1, scale=TRUE){
         print(paste("composante",i))
         tEF <- t(E0) %*% F0
         
-        ## w1 est vecteur propre de tEFtFE associée à la plus grande valeur propre
+        ## w1 est vecteur propre associee a la plus grande valeur propre
         w1 <- t(E0)%*%F0
         w1 <- w1/sqrt(norme2(w1))
         W[,i] <- w1
@@ -250,7 +250,7 @@ PLS <- function(E,F,n=1, scale=TRUE){
         C[i,1] <- (cov(F0,t1)*(n.ind-1)/n.ind)^2
         ## C[i,2] <- calc.cov.theo(E0,F0)
         
-        ## on effectue deux régressions
+        ## on effectue deux regressions
         p1 <- t(E0)%*%t1/norme2(t1)
         P[,i] <- p1
         r1 <- t(F0)%*%t1/norme2(t1)

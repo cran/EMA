@@ -1,6 +1,7 @@
 ## imports
 
 import(siggenes)
+importFrom(Biobase, exprs)
 
 importFrom(affy, justRMA, list.celfiles, ReadAffy, mas5,
            probeset, pm, mm)
@@ -28,7 +29,18 @@ importFrom(FactoMineR, PCA, plot.PCA, MFA, plot.MFA,
 importFrom(cluster, agnes, daisy, diana, pam)
 
 importFrom(AnnotationDbi, as.list, mget)
-
+importFrom("grDevices", "bitmap", "col2rgb", "dev.new", "dev.off",
+           "pdf", "rainbow", "rgb")
+importFrom("graphics", "abline", "axis", "barplot", "box", "boxplot",
+           "hist", "image", "layout", "legend", "lines", "matplot",
+           "mtext", "par", "points", "text")
+importFrom("stats", "as.dendrogram", "as.hclust", "biplot",
+           "chisq.test", "cor", "cor.test", "cov", "cutree", "density",
+           "kmeans", "na.omit", "p.adjust", "pchisq", "pf", "pt",
+           "pwilcox", "qqline", "qqnorm", "qqplot", "quantile",
+           "rwilcox", "sd", "shapiro.test", "t.test", "var",
+           "var.test", "wilcox.test")
+importFrom("utils", "write.table")
 ## exported functions
 export(as.colors,
        bioMartAnnot,
