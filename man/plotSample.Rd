@@ -43,8 +43,9 @@ pca <- runPCA(t(example.subset), verbose = FALSE, plotInertia = FALSE, plotSampl
 
 ## Sample plot of PCA object colored by tumour type
 perso.colors <- colorRampPalette(c("red", "green"))
+\dontrun{
 plotSample(pca, lab = marty.type.cl, palette="perso.colors", ellipse=TRUE)
-
+}
 }
 \keyword{plot}
 

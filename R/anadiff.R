@@ -98,7 +98,7 @@ test.LC <- function(C, X, Y, global=FALSE, cor.multtest=TRUE, typeFDR="FDR-BH") 
     r <- ncol(X)
     q <- nrow(C)   
     n <- nrow(X)
-    if (class(C)!="matrix") C=t(as.matrix(C))
+    if (!is(C, "matrix")) C=t(as.matrix(C))
 
     invX <- solve(t(X) %*% X)
     theta <- invX %*% t(X) %*% Y
@@ -214,7 +214,7 @@ runSAM <- function(data, labels, nbpermut=500, q=0.05, plot=TRUE, method="d.stat
 
     message("Find delta...")
     outdelta <- try(findDelta(output, fdr=q))
-    if(class(outdelta) == "matrix"){
+    if(is(outdelta, "matrix")){
         delta <- outdelta[2,1] 
         print(paste("Delta : ", delta, sep=""))
         

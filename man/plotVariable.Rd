@@ -41,7 +41,9 @@ pca <- runPCA(t(marty[1:100,]), verbose = FALSE, plotSample = FALSE,
     plotInertia = FALSE)
 \dontrun{
 ## Variable plot of PCA object
+\dontrun{
 plotVariable(pca)
+}
 }
 }
 }

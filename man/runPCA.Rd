@@ -57,8 +57,9 @@ data("marty")
 ## PCA on sample with inertia plot and sample plot colored by tumour type
 
 example.subset <- marty[1:100,]
+\dontrun{
 pca <- runPCA(t(example.subset), verbose = FALSE, lab.sample = marty.type.cl)
-
+}
 }
 \keyword{multivariate}
 

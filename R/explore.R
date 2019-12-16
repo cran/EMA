@@ -105,25 +105,25 @@ probePlots <-  function(abatch, path, pbsList, labAxisProbes=TRUE, labAxisArrays
     
     if(missing(pbsList))
         stop("** ERROR : 'pbsList' argument is missing")
-    if(class(pbsList)!="character")
+    if(!is(pbsList, "character"))
         stop("** ERROR : 'pbsList' argument is not a character class")
     
     if(!missing(abatch)){
-        if(class(abatch) ==  "AffyBatch")
+        if(is(abatch, "AffyBatch"))
             abatch <- abatch
         else
             stop("** ERROR : 'abatch' argument is not an AffyBatch class")
     }
     
     if(!missing(path)){
-        if(class(path) ==  "character")
+        if(is(path, "character"))
             abatch <- ReadAffy(celfile.path=path)
         else
             stop("** ERROR : 'path' argument is not a character class")
     }
     
     if(!missing(pdfName)){
-        if(class(pdfName) ==  "character")
+        if(is(pdfName, "character"))
             pdf(pdfName, width=9, height=8)
         else
             stop("** ERROR : 'pdfName' argument is not a character")
@@ -197,7 +197,7 @@ probePlots <-  function(abatch, path, pbsList, labAxisProbes=TRUE, labAxisArrays
         
     }
     if(!missing(pdfName)){
-        if(class(pdfName) ==  "character")
+        if(is(pdfName, "character"))
             dev.off()
     }
 }

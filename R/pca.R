@@ -5,7 +5,7 @@
 #####
 
 plotVariable <- function(acp, axes=c(1,2), new.plot=FALSE, lab=NULL, lim.cos2.var=0, palette="rainbow", ...) {
-    if (!is.null(lab)){
+    if (length(lab)){
         col.lab <- as.colors(lab, palette=palette)
     }
     else {
@@ -43,8 +43,8 @@ plotSample <-  function(acp, axes=c(1,2), new.plot=FALSE, lab="quality", palette
     col.PC <- rep("black", nind)
     qual <- qualitySample(acp, axes=axes)[,3]
     
-    if (!is.null(lab)) {
-        if ((length(lab) == 1)&&(lab == "quality")) {
+    if (length(lab)) {
+        if ((length(lab) == 1) && (lab == "quality")) {
             col.PC <- rep("grey", nind)
             col.PC[qual < 0.3] <- "red"
             col.PC[qual > 0.7] <- "green"
@@ -65,7 +65,7 @@ plotSample <-  function(acp, axes=c(1,2), new.plot=FALSE, lab="quality", palette
     plot.PCA(acp, axes=c(axes[1],axes[2]), col.ind=col.PC, title=paste("Sample representation \n Axes", axes[1], "and", axes[2]), new.plot=new.plot, label=text, cex=0.8, ...)
     
     ## ellipses have to be plotted by hand
-    if ((ellipse) && !is.null(lab) && (lab != "quality")){
+    if ((ellipse) && length(lab) > 1){
         aux <- cbind.data.frame(lab, acp$ind$coord[, axes])
         coord.ell <- coord.ellipse(aux, bary=TRUE)$res
         nbre.ellipse <- nlevels(coord.ell[, 1])
@@ -76,7 +76,7 @@ plotSample <-  function(acp, axes=c(1,2), new.plot=FALSE, lab="quality", palette
     }
     
     
-    if (!is.null(lab)) {
+    if(length(lab)) {
         if ((length(lab) == 1)&&(lab == "quality")) {
             legend("topright", paste("Quality index", c("<0.3",">=0.3 and <=0.7",">0.7")), col=c("red","grey","green"), pch=20, title="Quality", bty="n", cex=0.7, text.col="gray50")
         } else {

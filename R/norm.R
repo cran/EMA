@@ -24,7 +24,7 @@ normAffy <- function(filenames, celfile.path, method=c("GCRMA","RMA","MAS5"), cd
     ## check if arguments are ok
     if( missing(filenames) & missing(celfile.path) )
         stop("** FAILURE : 'filenames' or 'celfile.path' arguments are empty")
-    if(class(celfile.path)!="character")
+    if(!is(celfile.path, "character"))
         stop("** FAILURE : 'celfile.path' argument is not a character class")
    
     celfile.path <- file.path(celfile.path)

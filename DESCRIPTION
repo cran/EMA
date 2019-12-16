@@ -1,7 +1,7 @@
 Package: EMA
 Type: Package
 Title: Easy Microarray Data Analysis
-Version: 1.4.5
+Version: 1.4.6
 Author: Nicolas Servant, Eleonore Gravier, Pierre Gestraud, Cecile Laurent, Caroline Paccard, Anne Biton, Jonas Mandel, Bernard Asselain, Emmanuel Barillot, Philippe Hupe
 Maintainer: Pierre Gestraud <pierre.gestraud@curie.fr>
 Description: We propose both a clear analysis strategy and a selection of tools to investigate microarray gene expression data. The most usual and relevant existing R functions were discussed, validated and gathered in an easy-to-use R package (EMA) devoted to gene expression microarray analysis. These functions were improved for ease of use, enhanced visualisation and better interpretation of results.
@@ -14,6 +14,6 @@ Imports: siggenes, affy, multtest, survival, xtable, gcrma,
 Suggests: hgu133plus2.db, lumi, GOstats, Category, vsn,GO.db,
         BiocGenerics, GSEABase
 NeedsCompilation: no
-Packaged: 2016-09-07 09:42:28 UTC; gestraud
+Packaged: 2019-12-16 16:27:35 UTC; gestraud
 Repository: CRAN
-Date/Publication: 2016-09-07 13:01:55
+Date/Publication: 2019-12-16 18:00:02 UTC
