@@ -1,4 +1,4 @@
-873ff2eed9f54df1dd475512fe515026 *DESCRIPTION
+b50b476470dfd1087ec23ddb601529c2 *DESCRIPTION
 a2bc4feddba3945958d212cb619cb9d1 *NAMESPACE
 6b0812f2d72143bc44a0faee51e7023c *NEWS
 1f83cfb5d669e473c5a1fe13d71f1bb9 *R/EMA-internal.R
@@ -28,7 +28,7 @@ e8456f882383e180c8c03605c27479c7 *man/clustering.kmeans.Rd
 ec64680e217e27eac715068bebfe482d *man/dice.Rd
 4545ef9c663143a8cf358889156adf27 *man/distrib.plot.Rd
 2b5b632754afcf451d8c33065ebbf94a *man/eval.stability.clustering.Rd
-cacfff4abbe3eb09bde2d48138b2ea3d *man/expFilter.Rd
+d2c6f3a7d17d497a6544736221040998 *man/expFilter.Rd
 c33acc67865a15833bef4368b69bfacf *man/foldchange.Rd
 18cb657eb614894fd077f03124532b97 *man/genes.selection.Rd
 1f6b16234f2636bf5eb8b503d52af179 *man/goReport.Rd

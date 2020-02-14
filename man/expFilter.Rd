@@ -15,7 +15,6 @@ expFilter(data, threshold = 3.5, p=0.01, graph = TRUE)
   \item{p}{keep probes with at least p*ncol(data) samples higher than threshold}
   \item{graph}{boolean indicating if an histogram of the data should be
     plotted.}
-  \item{...}{Arguments to be passed to methods, such as graphical parameters (see 'par').}
 }
 \details{
   The non variant genes are defined gy the \code{threshold} value. A
